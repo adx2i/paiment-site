@@ -1,0 +1,44 @@
+body{margin:0}
+a{color:#8A4A00}a:hover{color:#23262B}
+:focus-visible{outline:3px solid #FF8A2A;outline-offset:3px}
+.tp-phone{animation:tpPhone 7s cubic-bezier(.6,0,.2,1) infinite}
+.tp-wave{animation:tpWave 7s ease-out infinite}
+.tp-wave2{animation-delay:.18s}
+.tp-wave3{animation-delay:.36s}
+.tp-ask{animation:tpAsk 7s linear infinite}
+.tp-ok{animation:tpOk 7s linear infinite}
+.tp-receipt{animation:tpReceipt 7s cubic-bezier(.3,0,.2,1) infinite}
+.tp-toast{animation:tpToast 7s cubic-bezier(.3,0,.2,1) infinite}
+@keyframes tpPhone{0%,8%{transform:translate(120px,-170px) rotate(20deg)} 30%,58%{transform:translate(0,0) rotate(9deg)} 80%,100%{transform:translate(120px,-170px) rotate(20deg)} }
+@keyframes tpWave{0%,28%{opacity:0;transform:scale(.7)} 36%{opacity:1;transform:scale(1)} 48%,100%{opacity:0;transform:scale(1.25)} }
+@keyframes tpAsk{0%,40%{opacity:1} 46%,92%{opacity:0} 100%{opacity:1} }
+@keyframes tpOk{0%,40%{opacity:0} 46%,92%{opacity:1} 100%{opacity:0} }
+@keyframes tpReceipt{0%,46%{transform:translateY(86px)} 62%,90%{transform:translateY(0)} 100%{transform:translateY(86px)} }
+@keyframes tpToast{0%,46%{opacity:0;transform:translateY(14px)} 56%,90%{opacity:1;transform:translateY(0)} 100%{opacity:0;transform:translateY(14px)} }
+.foil{position:relative;overflow:hidden}
+.foil::after{content:"";position:absolute;top:-20%;bottom:-20%;left:-60%;width:40%;background:linear-gradient(100deg,rgba(255,255,255,0),rgba(255,255,255,.6),rgba(255,255,255,0));transform:skewX(-18deg);animation:sheen 5.5s ease-in-out infinite;pointer-events:none}
+@keyframes sheen{0%,55%{left:-60%} 85%,100%{left:130%} }
+.btn-gold{transition:transform .2s,box-shadow .2s}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(255,138,42,.4)}
+.tile{transition:transform .25s cubic-bezier(.2,.7,.2,1),box-shadow .25s}
+.tile:hover{transform:translateY(-6px);box-shadow:0 22px 40px rgba(35,38,43,.18)}
+.float{animation:bob 6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:rotate(-14deg) translateY(0)} 50%{transform:rotate(-10deg) translateY(-12px)} }
+.spin{animation:spin 50s linear infinite}
+@keyframes spin{from{transform:rotate(18deg)} to{transform:rotate(378deg)} }
+.marq{display:inline-block;white-space:nowrap;animation:marq 48s linear infinite}
+@keyframes marq{to{transform:translateX(-50%)} }
+.goldtext{background:linear-gradient(160deg,#FFD45C,#FF8A2A);-webkit-background-clip:text;background-clip:text;color:transparent}
+@media (prefers-reduced-motion: reduce){.tp-phone,.tp-wave,.tp-ask,.tp-ok,.tp-receipt,.tp-toast,.float,.spin,.marq,.foil::after{animation:none} }
+.intro{animation:introBg 2.5s linear both}
+.intro-gif{animation:introGif 2.5s linear both}
+.intro-logo{animation:introLogo 2.5s cubic-bezier(.7,0,.2,1) both}
+@keyframes introBg{0%,74%{background-color:#000;visibility:visible} 97%{background-color:rgba(0,0,0,0);visibility:visible} 100%{background-color:rgba(0,0,0,0);visibility:hidden} }
+@keyframes introGif{0%,56%{opacity:1} 72%,100%{opacity:0} }
+@keyframes introLogo{0%,56%{opacity:0;left:calc(50% - 172px);top:222px;height:211px} 72%,76%{opacity:1;left:calc(50% - 172px);top:222px;height:211px} 98%,100%{opacity:1;left:45px;top:29px;height:76px} }
+@media (prefers-reduced-motion: reduce){.intro,.intro-gif,.intro-logo{animation:none} }
+
+@media (max-width:680px){.navlinks a:not(.btn-gold){display:none} }
+html{scroll-behavior:smooth}
+.no-intro .intro{display:none}
+img{max-width:100%}
